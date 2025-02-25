@@ -1,2 +1,4 @@
 login_host: mysql.deepakaws.online #login_host is keyword
 mysql_root_password: ExpenseApp@1
+app_location: /app
+component: backend
