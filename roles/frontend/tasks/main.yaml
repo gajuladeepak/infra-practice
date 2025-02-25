@@ -28,12 +28,13 @@
   ansible.builtin.unarchive:
     src: /tmp/frontend.zip #by default ansible thinks this is in ansible server so i need to move it to remote server
     dest: /usr/share/nginx/html
-    remote_src: yes
+   
 
 - name: copy expense conf
   ansible.builtin.copy:
     src: expense.conf
     dest: /etc/nginx/default.d/expense.conf
+    remote_src: yes
 
 - name: restart nginx
   ansible.builtin.service:
