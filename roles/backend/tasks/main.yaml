@@ -19,6 +19,8 @@
     name: expense
 
 - name: import taks from common role
+  tags:
+  - deployment
   ansible.builtin.import_role:
     name: common
     tasks_from: app-pre-req
@@ -40,6 +42,8 @@
 #     remote_src: yes #with this we are saying we have it in remote server no need to move
 
 - name: install dependencies
+  tags:
+  - deployment
   ansible.builtin.command: npm install
   args:
     chdir: /app #here we are changing the working directory to another directory (/app) to run the command(npm install)
@@ -67,6 +71,8 @@
     state: import #from module #if in the state if 'dump' or 'import' values are given then name values should be all
 
 - name: deamon reload
+  tags:
+  - deployment
   ansible.builtin.systemd_service:
     daemon_reload: true
     state: restarted
