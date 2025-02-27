@@ -40,6 +40,10 @@
 #     src: /tmp/backend.zip #by default ansible thinks this is in ansible server so i need to move it to remote server
 #     dest: /app
 #     remote_src: yes #with this we are saying we have it in remote server no need to move
+- name: install dependencies
+  tags:
+  - deployment
+  ansible.builtin.command: apt update
 
 - name: install dependencies
   tags:
