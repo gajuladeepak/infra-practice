@@ -1,5 +1,6 @@
 - name: nginx install and run
-  hosts: all #by changing this to "all' it will connect to all the servers  returned by dynamic inventory
+  hosts: nginx
+  #hosts: all #by changing this to "all' it will connect to all the servers  returned by dynamic inventory
   become: yes #to give sudo access add this line, take sudo access
   serial: 3
   tasks:
