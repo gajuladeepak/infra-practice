@@ -2,6 +2,6 @@
   hosts: backend
   become: yes
   vars_files:
-  - /var/expense/credentails_mysql.yaml
+  - /var/expense/credentails.yaml
   roles:
   - backend
